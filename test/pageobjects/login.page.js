@@ -41,7 +41,11 @@ class LoginPage extends Page {
     }
 
     get siguiente(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[2]/div/div/div[9]/table/tbody/tr[2]/td[3]/a[2]')
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[2]/div/div/div[9]/table/tbody/tr[2]/td[3]/a[1]')
+    }
+
+    get continuar(){
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[2]/div/div/div[10]/table/tbody/tr/td[2]/a')
     }
     /**
      * a method to encapsule automation code to interact with the page
@@ -70,6 +74,8 @@ class LoginPage extends Page {
         await this.viviendaTiempo.setValue('36')
 
         await this.siguiente.click()
+
+        await this.continuar.click()
         // await simularBtn.click()
         // const creditoHipotecario = $('//strong[contains(text(), "Crédito Hipotecario")]');
         // await creditoHipotecario.scrollIntoView()
