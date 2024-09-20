@@ -23,6 +23,26 @@ class LoginPage extends Page {
     get simularBoton(){
         return $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/strong/div[2]/div/p/a[1]')
     }
+
+    get compraCasaOpcion(){
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/p/strong')
+    }
+
+    get viviendaValor(){
+        return $('#vivienda-valor')
+    }
+
+    get viviendaFinanciamiento(){
+        return $('#vivienda-financiamiento')
+    }
+
+    get viviendaTiempo(){
+        return $('#vivienda-tiempo')
+    }
+
+    get siguiente(){
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[2]/div/div/div[9]/table/tbody/tr[2]/td[3]/a[2]')
+    }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
@@ -42,6 +62,14 @@ class LoginPage extends Page {
         await creditoAgil.scrollIntoView()
 
         await this.simularBoton.click()
+
+        await this.compraCasaOpcion.click()
+
+        await this.viviendaValor.setValue('100000')
+        await this.viviendaFinanciamiento.setValue('50')
+        await this.viviendaTiempo.setValue('36')
+
+        await this.siguiente.click()
         // await simularBtn.click()
         // const creditoHipotecario = $('//strong[contains(text(), "Crédito Hipotecario")]');
         // await creditoHipotecario.scrollIntoView()
