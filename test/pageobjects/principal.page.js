@@ -4,7 +4,7 @@ import Page from './page.js';
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class LoginPage extends Page {
+class PrincipalPage extends Page {
     /**
      * define selectors using getter methods
      */
@@ -52,11 +52,10 @@ class LoginPage extends Page {
      * e.g. to login using username and password
      */
     async personas () {
-        console.log((await browser.getWindowHandles()).length)
         const handles = await browser.getWindowHandles()
-        console.log('handles =====>', handles)
+
         await browser.switchToWindow(handles[0])
-        console.log('windows =====>', await browser.switchToWindow(handles[0]))
+        
         await this.personasSelector.click()
         await browser.pause(10000)
         await this.creditosSelector.moveTo()
@@ -76,19 +75,9 @@ class LoginPage extends Page {
         await this.siguiente.click()
 
         await this.continuar.click()
-        // await simularBtn.click()
-        // const creditoHipotecario = $('//strong[contains(text(), "Crédito Hipotecario")]');
-        // await creditoHipotecario.scrollIntoView()
+
         await browser.pause(10000)
-        // const botones = await $$('.bt-caja-naranja');
-        // console.log('botones =====>', await botones[2].getText())
-        // await botones[2].click();  
-        
-        // Haz clic en el tercer botón
-        // const tercerBoton = $('(//a[contains(text(), "CONOCE MÁS")])[3]');
-        // await tercerBoton.click();
-        // await this.conoceMasBtn.click()
-        await browser.pause(10000)
+
     }
 
     /**
@@ -99,4 +88,4 @@ class LoginPage extends Page {
     }
 }
 
-export default new LoginPage();
+export default new PrincipalPage();

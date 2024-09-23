@@ -1,16 +1,13 @@
-import { expect } from '@wdio/globals'
-import LoginPage from '../pageobjects/login.page.js'
-import SecurePage from '../pageobjects/secure.page.js'
+import principalPage from '../pageobjects/principal.page'
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
+describe('Pagina Banco Internacional', () => {
+    it('Creditos - Credito Hipotecario', async () => {
         await browser.maximizeWindow()
-        await LoginPage.open()
-        await LoginPage.personas()
+        await principalPage.open()
+        await principalPage.personas()
         // await LoginPage.login('tomsmith', 'SuperSecretPassword!')
         // await expect(SecurePage.flashAlert).toBeExisting()
         // await expect(SecurePage.flashAlert).toHaveText(
         //     expect.stringContaining('You logged into a secure area!'))
     })
 })
-
