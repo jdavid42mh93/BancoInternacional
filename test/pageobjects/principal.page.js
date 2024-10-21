@@ -21,11 +21,11 @@ class PrincipalPage extends Page {
     }
 
     get simularBoton(){
-        return $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/strong/div[2]/div/p/a[1]')
+        return $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/b/strong/div[2]/div/p/a[1]')
     }
 
     get compraCasaOpcion(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/p/strong')
+        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/p/strong')
     }
 
     get viviendaValor(){
@@ -41,11 +41,11 @@ class PrincipalPage extends Page {
     }
 
     get siguiente(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[2]/div/div/div[9]/table/tbody/tr[2]/td[3]/a[1]')
+        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[2]/div/div/div[9]/table/tbody/tr[2]/td[3]/a[1]')
     }
 
     get continuar(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[2]/div/div/div[10]/table/tbody/tr/td[2]/a')
+        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[2]/div/div/div[10]/table/tbody/tr/td[2]/a')
     }
     /**
      * a method to encapsule automation code to interact with the page
@@ -61,7 +61,7 @@ class PrincipalPage extends Page {
         await this.creditosSelector.moveTo()
         await this.creditoHipotecarioSelector.click()
 
-        const creditoAgil = $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/strong/div[1]/div/p[1]/strong')
+        const creditoAgil = $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/b/strong/div[1]/div/p[1]/strong')
         await creditoAgil.scrollIntoView()
 
         await this.simularBoton.click()
