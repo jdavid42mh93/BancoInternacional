@@ -25,7 +25,7 @@ class PrincipalPage extends Page {
     }
 
     get compraCasaOpcion(){
-        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/p/strong')
+        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/img')
     }
 
     get viviendaValor(){
@@ -47,15 +47,16 @@ class PrincipalPage extends Page {
     get continuar(){
         return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[2]/div/div/div[10]/table/tbody/tr/td[2]/a')
     }
+
+    get cookies(){
+        return $('/html/body/div[9]/div/div/p/a[1]')
+    }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
     async personas () {
-        const handles = await browser.getWindowHandles()
-
-        await browser.switchToWindow(handles[0])
-        
+        await this.cookies.click()
         await this.personasSelector.click()
         await browser.pause(10000)
         await this.creditosSelector.moveTo()
