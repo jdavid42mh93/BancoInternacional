@@ -1,4 +1,5 @@
 import { $ } from '@wdio/globals'
+import { botones } from '../constants/botones.js';
 import Page from './page.js';
 
 /**
@@ -21,7 +22,7 @@ class PrincipalPage extends Page {
     }
 
     get simularBoton(){
-        return $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/b/strong/div[2]/div/p/a[1]')
+        return $(botones.simular)
     }
 
     get compraCasaOpcion(){
@@ -41,11 +42,11 @@ class PrincipalPage extends Page {
     }
 
     get siguiente(){
-        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[2]/div/div/div[9]/table/tbody/tr[2]/td[3]/a[1]')
+        return $(botones.siguiente)
     }
 
     get continuar(){
-        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[2]/div/div/div[10]/table/tbody/tr/td[2]/a')
+        return $(botones.continuar)
     }
 
     get cookies(){
@@ -62,11 +63,11 @@ class PrincipalPage extends Page {
         await this.creditosSelector.moveTo()
         await this.creditoHipotecarioSelector.click()
 
-        const creditoAgil = $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/b/strong/div[1]/div/p[1]/strong')
-        await creditoAgil.scrollIntoView()
-
+        // const creditoAgil = $('/html/body/div[4]/main/article/div/section[2]/div/div/div/div/b/strong/div[1]/div/p[1]/strong')
+        // await creditoAgil.scrollIntoView()
+        await browser.pause(5000)
         await this.simularBoton.click()
-
+        await browser.pause(5000)
         await this.compraCasaOpcion.click()
 
         await this.viviendaValor.setValue('100000')
