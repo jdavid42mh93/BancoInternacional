@@ -15,7 +15,7 @@ class PrincipalPage extends Page {
         return $('/html/body/div[9]/div/div/p/a[1]')
     }
 
-     async clickPersonasOpcion(){
+     async clickEmpresasOpcion(){
         await this.personasSelector.click()
      }
 
