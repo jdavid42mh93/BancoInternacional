@@ -10,13 +10,18 @@ class PrincipalPage extends Page {
     get personasSelector () {
         return $(menuOpcion.personas);
     }
-
+    get empresasSelector () {
+        return $(menuOpcion.empresa);
+    }
     get cookies(){
         return $('/html/body/div[9]/div/div/p/a[1]')
     }
 
      async clickPersonasOpcion(){
         await this.personasSelector.click()
+     }
+     async clickEmpresasOpcion(){
+        await this.empresasSelector.click()
      }
 
      async clickCookies(){

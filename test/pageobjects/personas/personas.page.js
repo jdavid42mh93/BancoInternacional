@@ -40,7 +40,6 @@ class Personas {
     async simulacionCreditoHipotecario () {
         await this.creditosSelector.moveTo()
         await this.creditoHipotecarioSelector.click()
-
         await browser.pause(5000)
         await this.simularBoton.click()
         await browser.pause(5000)
