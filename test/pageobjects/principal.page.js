@@ -26,6 +26,28 @@ class PrincipalPage extends Page {
     open () {
         return super.open('login');
     }
+
+
+    get empresasSelector () {
+        return $(menuOpcion.empresas);
+    }
+
+    get cookies(){
+        return $('/html/body/div[9]/div/div/p/a[1]')
+    }
+
+     async clickEmpresasOpcion(){
+        await this.empresasSelector.click()
+     }
+
+     async clickCookies(){
+         await this.cookies.click()
+     }
+
+    open () {
+        return super.open('login');
+    }
+
 }
 
 export default new PrincipalPage();
