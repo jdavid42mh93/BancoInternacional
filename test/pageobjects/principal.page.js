@@ -15,12 +15,20 @@ class PrincipalPage extends Page {
         return $('/html/body/div[9]/div/div/p/a[1]')
     }
 
+    get empresasSelector () {
+        return $(menuOpcion.empresas);
+    }
+
      async clickPersonasOpcion(){
         await this.personasSelector.click()
      }
 
      async clickCookies(){
          await this.cookies.click()
+     }
+
+     async clickEmpresasOpcion(){
+        await this.empresasSelector.click()
      }
 
     open () {
