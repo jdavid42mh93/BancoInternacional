@@ -10,52 +10,63 @@ class Empresas {
     }
 
     get simularBoton(){
-        return $(botones.simular)
+        return $(botones.simularEmpresas)
     }
 
     get paraMi(){
-        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/img')
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[1]/a[1]')
+    }
+
+    get comercial(){
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[2]/a[3]')
+    }
+
+    get capitalTrabajo(){
+        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[5]/a[1]')
     }
 
     get monto(){
-        return $('#vivienda-valor')
+        return $('#empresa-valor')
     }
 
-    // get viviendaFinanciamiento(){
-    //     return $('#vivienda-financiamiento')
-    // }
-
     get tiempo(){
-        return $('#vivienda-tiempo')
+        return $('#empresa-tiempo')
     }
 
     get siguiente(){
-        return $(botones.siguiente)
+        return $(botones.siguienteEmpresas)
     }
 
     get continuar(){
-        return $(botones.continuar)
+        return $(botones.continuarEmpresas)
     }
 
     async simulacionCreditoComercial () {
         await this.creditosSelector.moveTo()
-        await this.creditoHipotecarioSelector.click()
+        await this.creditoComercialSelector.click()
 
         await browser.pause(5000)
         await this.simularBoton.click()
+        
         await browser.pause(5000)
-        await this.compraCasaOpcion.click()
+        await this.paraMi.click()
+
+        await browser.pause(5000)
+        await this.comercial.click()
+
+        await browser.pause(5000)
+        await this.capitalTrabajo.click()
 
         // Ingreso de valores 
-        await this.viviendaValor.setValue('100000')
-        await this.viviendaFinanciamiento.setValue('50')
-        await this.viviendaTiempo.setValue('36')
+        await this.monto.setValue('100000')
+        await this.tiempo.setValue('36')
+        // await this.viviendaTiempo.setValue('36')
 
         await this.siguiente.click()
 
         await this.continuar.click()
 
-        await browser.pause(10000)
+        await browser.pause(5000)
 
     }
 }

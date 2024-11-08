@@ -8,11 +8,11 @@ import Page from './page.js';
 class PrincipalPage extends Page {
 
     get personasSelector () {
-        return $(menuOpcion.personas);
+        return $(menuOpcion.personas)
     }
 
     get empresasSelector () {
-        return $('')
+        return $(menuOpcion.empresas)
     }
 
     get cookies(){
