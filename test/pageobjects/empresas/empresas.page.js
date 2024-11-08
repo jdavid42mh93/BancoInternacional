@@ -1,12 +1,13 @@
 import { botones } from "../../constants/botones"
+import { empresas } from "../../constants/empresas/empresas"
 
 class Empresas {
     get creditosSelector () {
-        return $('/html/body/div[4]/header[2]/div[1]/nav/div/ul/li[2]/ul/li[3]/a/span')
+        return $(empresas.creditos)
     }
 
     get creditoComercialSelector() {
-        return $('/html/body/div[4]/header[2]/div[1]/nav/div/ul/li[2]/ul/li[3]/ul/li/a')
+        return $(empresas.creditoComercial)
     }
 
     get simularBoton(){
@@ -14,23 +15,23 @@ class Empresas {
     }
 
     get paraMi(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[1]/a[1]')
+        return $(empresas.paraMi)
     }
 
     get comercial(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[2]/a[3]')
+        return $(empresas.comercial)
     }
 
     get capitalTrabajo(){
-        return $('/html/body/div[4]/main/article/div/div[2]/strong/div[1]/div/section[1]/div/div/div/div[5]/a[1]')
+        return $(empresas.capitalTrabajo)
     }
 
     get monto(){
-        return $('#empresa-valor')
+        return $(empresas.monto)
     }
 
     get tiempo(){
-        return $('#empresa-tiempo')
+        return $(empresas.tiempo)
     }
 
     get siguiente(){
