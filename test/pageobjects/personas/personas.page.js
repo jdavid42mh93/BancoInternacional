@@ -1,12 +1,13 @@
 import { botones } from "../../constants/botones"
+import { personas } from "../../constants/personas/personas"
 
 class Personas {
     get creditosSelector () {
-        return $('/html/body/div[4]/header[2]/div[1]/nav/div/ul/li[1]/ul/li[3]/a/span')
+        return $(personas.creditos)
     }
 
     get creditoHipotecarioSelector() {
-        return $('/html/body/div[4]/header[2]/div[1]/nav/div/ul/li[1]/ul/li[3]/ul/li[1]/a')
+        return $(personas.creditoHipotecario)
     }
 
     get simularBoton(){
@@ -14,19 +15,19 @@ class Personas {
     }
 
     get compraCasaOpcion(){
-        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/img')
+        return $(personas.compraCasa)
     }
 
     get viviendaValor(){
-        return $('#vivienda-valor')
+        return $(personas.viviendaValor)
     }
 
     get viviendaFinanciamiento(){
-        return $('#vivienda-financiamiento')
+        return $(personas.viviendaFinaciamiento)
     }
 
     get viviendaTiempo(){
-        return $('#vivienda-tiempo')
+        return $(personas.viviendaTiempo)
     }
 
     get siguiente(){

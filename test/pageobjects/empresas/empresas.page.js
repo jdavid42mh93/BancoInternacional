@@ -69,7 +69,6 @@ class Empresas {
         await browser.pause(10000)
 
     }
-
 }
 
 export default new Empresas()
