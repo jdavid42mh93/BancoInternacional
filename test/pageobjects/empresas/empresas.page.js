@@ -1,33 +1,32 @@
 import { botones } from "../../constants/botones"
-import { personas } from "../../constants/personas/personas"
 
-class Personas {
+class Empresas {
     get creditosSelector () {
-        return $(personas.creditos)
+        return $('/html/body/div[4]/header[2]/div[1]/nav/div/ul/li[2]/ul/li[3]/a/span')
     }
 
-    get creditoHipotecarioSelector() {
-        return $(personas.creditoHipotecario)
+    get creditoComercialSelector() {
+        return $('/html/body/div[4]/header[2]/div[1]/nav/div/ul/li[2]/ul/li[3]/ul/li/a')
     }
 
     get simularBoton(){
         return $(botones.simular)
     }
 
-    get compraCasaOpcion(){
-        return $(personas.compraCasa)
+    get paraMi(){
+        return $('/html/body/div[4]/main/article/div/div[2]/b/strong/div[1]/div/section[1]/div/div/div/div[4]/a[1]/img')
     }
 
-    get viviendaValor(){
-        return $(personas.viviendaValor)
+    get monto(){
+        return $('#vivienda-valor')
     }
 
-    get viviendaFinanciamiento(){
-        return $(personas.viviendaFinaciamiento)
-    }
+    // get viviendaFinanciamiento(){
+    //     return $('#vivienda-financiamiento')
+    // }
 
-    get viviendaTiempo(){
-        return $(personas.viviendaTiempo)
+    get tiempo(){
+        return $('#vivienda-tiempo')
     }
 
     get siguiente(){
@@ -38,7 +37,7 @@ class Personas {
         return $(botones.continuar)
     }
 
-    async simulacionCreditoHipotecario () {
+    async simulacionCreditoComercial () {
         await this.creditosSelector.moveTo()
         await this.creditoHipotecarioSelector.click()
 
@@ -61,4 +60,4 @@ class Personas {
     }
 }
 
-export default new Personas()
+export default new Empresas()

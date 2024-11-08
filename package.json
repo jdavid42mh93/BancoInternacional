@@ -7,6 +7,8 @@
     "@wdio/mocha-framework": "^9.0.8"
   },
   "scripts": {
-    "test": "npx wdio run ./wdio.conf.js"
+    "test": "npx wdio run ./wdio.conf.js",
+    "personas": "npx wdio run ./wdio.conf.js --spec credito-hipotecario.e2e.js",
+    "empresas": "npx wdio run ./wdio.conf.js --spec credito-comercial.e2e.js"
   }
 }
