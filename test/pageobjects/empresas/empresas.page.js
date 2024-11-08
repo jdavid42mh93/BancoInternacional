@@ -31,19 +31,19 @@ class Empresas {
     //}
 
     get montoCredito(){
-        return $('#montoCredito')
+        return $('#empresa-valor')
     }
 
     get creditoTiempo(){
-        return $('#creditoTiempo')
+        return $('#empresa-tiempo')
     }
 
     get siguiente(){
-        return $(botones.siguiente)
+        return $(botones.siguienteEmpresa)
     }
 
     get continuar(){
-        return $(botones.continuar)
+        return $(botones.continuarEmpresa)
     }
 
     async simulacionCreditoComercial () {
